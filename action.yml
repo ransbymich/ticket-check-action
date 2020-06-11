@@ -18,44 +18,14 @@ inputs:
     default: '^(CH)(-?)(\d{3,})'
     required: true
 
-  titleRegexFlags:
-    description: 'The regular expression flags applied to the title regular expression'
-    default: 'gi'
-    required: true
-
-  branchRegex:
-    description: 'The regular expression used to search the branch for the intended format'
-    default: '^(CH)(-?)(\d{3,})'
-    required: true
-
-  branchRegexFlags:
-    description: 'The regular expression flags applied to the branch regular expression'
-    default: 'gi'
-    required: true
-
-  bodyRegex:
-    description: 'The regular expression used to search the body for a shorthand reference'
-    default: '(CH)(-?)(\d{3,})'
-    required: true
-
-  bodyRegexFlags:
-    description: 'The flags applied to the body regular expression when searching for a shorthand reference'
-    default: 'gim'
-    required: true
-
-  bodyURLRegex:
-    description: 'The regular expression used to search the body for a URL reference'
-    default: 'http(s?):\/\/(app.clubhouse.io)(\/neofinancial)(\/story)\/\d+'
-    required: true
-
-  bodyURLRegexFlags:
-    description: 'The flags applied to the body regular expression when searching for a URL reference'
-    default: 'gim'
-    required: true
-
   token:
     description: 'GitHub authentication token'
     required: true
+
+  comment:
+    description: 'Comment added to the Pull Request'
+    required: true
+    default: 'Hey! I noticed that your PR contained a reference to the ticket in the branch name but not in the title. I went ahead and updated that for you. Hope you dont mind! ☺️'
 
 runs:
   using: 'node12'
